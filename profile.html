@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - E-Commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">E-Shop</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="cart.html" class="cart-icon">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="user-icon" id="userIcon">
+                        👤
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <!-- Sidebar -->
+                <aside class="profile-sidebar">
+                    <div class="profile-avatar">
+                        <div class="avatar-wrapper">
+                            <img src="https://via.placeholder.com/120" alt="Profile" class="avatar-image" id="avatarImage">
+                            <label class="avatar-upload" for="avatarInput">
+                                📷
+                                <input type="file" id="avatarInput" accept="image/*">
+                            </label>
+                        </div>
+                        <h3 class="profile-name" id="profileName">Loading...</h3>
+                        <p class="profile-email" id="profileEmail">Loading...</p>
+                    </div>
+
+                    <ul class="profile-menu">
+                        <li>
+                            <a href="#profile-info" class="active" data-section="profile-info">
+                                <span class="profile-menu-icon">👤</span>
+                                Profile Information
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#addresses" data-section="addresses">
+                                <span class="profile-menu-icon">📍</span>
+                                My Addresses
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#orders" data-section="orders">
+                                <span class="profile-menu-icon">📦</span>
+                                My Orders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#security" data-section="security">
+                                <span class="profile-menu-icon">🔒</span>
+                                Security
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="logoutBtn">
+                                <span class="profile-menu-icon">🚪</span>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="profile-content">
+                    <!-- Profile Information Section -->
+                    <div id="profile-info" class="profile-section-content active">
+                        <div class="profile-header">
+                            <h2>Profile Information</h2>
+                            <p>Update your personal details</p>
+                        </div>
+
+                        <form id="profileForm" class="auth-form">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <span class="error-message" id="firstNameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <span class="error-message" id="lastNameError"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label for="dateOfBirth">Date of Birth</label>
+                                    <input type="date" id="dateOfBirth" name="dateOfBirth">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" name="gender">
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="updateProfileBtn">
+                                <span class="btn-text">Update Profile</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <span class="spinner"></span> Updating...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Addresses Section -->
+                    <div id="addresses" class="profile-section-content">
+                        <div class="profile-header">
+                            <h2>My Addresses</h2>
+                            <p>Manage your delivery addresses</p>
+                        </div>
+
+                        <button class="btn btn-primary" id="addAddressBtn" style="margin-bottom: 20px;">
+                            + Add New Address
+                        </button>
+
+                        <div id="addressList" class="address-list">
+                            <!-- Addresses will be loaded here -->
+                            <p style="text-align: center; color: #666;">Loading addresses...</p>
+                        </div>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div id="orders" class="profile-section-content">
+                        <div class="profile-header">
+                            <h2>My Orders</h2>
+                            <p>Track and manage your orders</p>
+                        </div>
+
+                        <div id="ordersList">
+                            <p style="text-align: center; color: #666; padding: 40px;">
+                                Order history will be available soon!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Security Section -->
+                    <div id="security" class="profile-section-content">
+                        <div class="profile-header">
+                            <h2>Security Settings</h2>
+                            <p>Manage your password and security preferences</p>
+                        </div>
+
+                        <form id="changePasswordForm" class="auth-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="currentPassword" name="currentPassword" required>
+                                    <button type="button" class="toggle-password" data-target="currentPassword">👁️</button>
+                                </div>
+                                <span class="error-message" id="currentPasswordError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="newPassword" name="newPassword" required>
+                                    <button type="button" class="toggle-password" data-target="newPassword">👁️</button>
+                                </div>
+                                <span class="error-message" id="newPasswordError"></span>
+                                <small style="color: #666; font-size: 12px; display: block; margin-top: 5px;">
+                                    Must be at least 8 characters with uppercase, lowercase, and number
+                                </small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+                                    <button type="button" class="toggle-password" data-target="confirmNewPassword">👁️</button>
+                                </div>
+                                <span class="error-message" id="confirmNewPasswordError"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="changePasswordBtn">
+                                <span class="btn-text">Change Password</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <span class="spinner"></span> Changing...
+                                </span>
+                            </button>
+                        </form>
+
+                        <div style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #f0f0f0;">
+                            <h3 style="color: #ef4444; margin-bottom: 10px;">Danger Zone</h3>
+                            <p style="color: #666; margin-bottom: 20px;">
+                                Once you delete your account, there is no going back. Please be certain.
+                            </p>
+                            <button class="btn btn-danger" id="deleteAccountBtn">
+                                Delete Account
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Alert Messages -->
+                    <div id="alertContainer"></div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add/Edit Address Modal -->
+    <div id="addressModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2 id="addressModalTitle">Add New Address</h2>
+                <button class="modal-close" id="closeAddressModal">×</button>
+            </div>
+            <form id="addressForm" class="auth-form">
+                <input type="hidden" id="addressId" name="addressId">
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    <span class="error-message" id="fullNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressPhone">Phone Number</label>
+                    <input type="tel" id="addressPhone" name="phone" required>
+                    <span class="error-message" id="addressPhoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressLine1">Address Line 1</label>
+                    <input type="text" id="addressLine1" name="addressLine1" placeholder="Street address" required>
+                    <span class="error-message" id="addressLine1Error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressLine2">Address Line 2 (Optional)</label>
+                    <input type="text" id="addressLine2" name="addressLine2" placeholder="Apartment, suite, etc.">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                        <span class="error-message" id="cityError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State/Province</label>
+                        <input type="text" id="state" name="state" required>
+                        <span class="error-message" id="stateError"></span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="zipCode">ZIP/Postal Code</label>
+                        <input type="text" id="zipCode" name="zipCode" required>
+                        <span class="error-message" id="zipCodeError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" value="USA" required>
+                        <span class="error-message" id="countryError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressType">Address Type</label>
+                    <select id="addressType" name="addressType">
+                        <option value="home">Home</option>
+                        <option value="work">Work</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="isDefault" name="isDefault">
+                        <span>Set as default address</span>
+                    </label>
+                </div>
+
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" class="btn btn-primary" id="saveAddressBtn">
+                        <span class="btn-text">Save Address</span>
+                        <span class="btn-loader" style="display: none;">
+                            <span class="spinner"></span> Saving...
+                        </span>
+                    </button>
+                    <button type="button" class="btn btn-outline" id="cancelAddressBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>E-Shop</h3>
+                    <p>Your trusted online shopping destination</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 E-Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/auth-service.js"></script>
+    <script src="js/user-service.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-height: 90vh;
+            overflow-y: auto;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .profile-section-content {
+            display: none;
+        }
+
+        .profile-section-content.active {
+            display: block;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+    </style>
+</body>
+</html>

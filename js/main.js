@@ -1,7 +1,22 @@
-// Main JavaScript for Ambica Bangles Website
+// Main JavaScript for E-Commerce Website
 
-// Mobile Menu Toggle
+// Initialize authentication state on page load
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize auth state manager if available
+    if (typeof authStateManager !== 'undefined') {
+        authStateManager.updateAuthState();
+        authStateManager.updateCartCount();
+    } else {
+        // Fallback cart count update
+        updateCartCount();
+    }
+
+    // Initialize page components
+    initializePage();
+});
+
+// Initialize page components
+function initializePage() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const searchToggle = document.querySelector('.search-toggle');
@@ -126,6 +141,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update active nav link based on current page
     updateActiveNavLink();
+}
+
+// Update cart count in navigation
+function updateCartCount() {
+    const cartCountElements = document.querySelectorAll('.cart-count');
+    if (cartCountElements.length === 0) return;
+    
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    cartCountElements.forEach(el => {
+        el.textContent = totalItems;
+        if (totalItems > 0) {
+            el.style.display = 'inline-block';
+        } else {
+            el.style.display = 'none';
+        }
+    });
+}
+
+// Listen for cart updates
+window.addEventListener('cartUpdated', function() {
+    if (typeof authStateManager !== 'undefined') {
+        authStateManager.updateCartCount();
+    } else {
+        updateCartCount();
+    }
 });
 
 // Perform search

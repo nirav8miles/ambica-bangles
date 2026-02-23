@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - E-Commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">E-Shop</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="cart.html" class="cart-icon">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>Welcome Back</h1>
+                        <p>Login to your account to continue shopping</p>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Enter your email"
+                                required
+                                autocomplete="email"
+                            >
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="password-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    placeholder="Enter your password"
+                                    required
+                                    autocomplete="current-password"
+                                >
+                                <button type="button" class="toggle-password" id="togglePassword">
+                                    👁️
+                                </button>
+                            </div>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
+                            <span class="btn-text">Login</span>
+                            <span class="btn-loader" style="display: none;">
+                                <span class="spinner"></span> Logging in...
+                            </span>
+                        </button>
+
+                        <div class="form-divider">
+                            <span>OR</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="btn btn-social btn-google">
+                                <img src="https://www.google.com/favicon.ico" alt="Google" width="20">
+                                Continue with Google
+                            </button>
+                            <button type="button" class="btn btn-social btn-facebook">
+                                <span style="font-size: 20px;">📘</span>
+                                Continue with Facebook
+                            </button>
+                        </div>
+
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="register.html">Sign up</a></p>
+                        </div>
+                    </form>
+
+                    <!-- Alert Messages -->
+                    <div id="alertContainer"></div>
+                </div>
+
+                <!-- Features Section -->
+                <div class="auth-features">
+                    <h3>Why Shop With Us?</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">🚚</span>
+                            <div>
+                                <h4>Free Shipping</h4>
+                                <p>On orders over $50</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔒</span>
+                            <div>
+                                <h4>Secure Payment</h4>
+                                <p>100% secure transactions</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">↩️</span>
+                            <div>
+                                <h4>Easy Returns</h4>
+                                <p>30-day return policy</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💬</span>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Always here to help</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>E-Shop</h3>
+                    <p>Your trusted online shopping destination</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 E-Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/auth-service.js"></script>
+    <script src="js/user-service.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
