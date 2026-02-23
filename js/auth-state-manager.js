@@ -171,7 +171,8 @@ class AuthStateManager {
         const navbar = document.querySelector('.navbar');
         if (!navbar) return;
 
-        const navIcons = navbar.querySelector('.nav-icons');
+        // Try both .nav-icons and .nav-actions
+        const navIcons = navbar.querySelector('.nav-icons') || navbar.querySelector('.nav-actions');
         if (!navIcons) return;
 
         // Remove existing auth-related icons
@@ -181,22 +182,46 @@ class AuthStateManager {
         if (existingUserIcon) existingUserIcon.remove();
         if (existingLoginLink) existingLoginLink.remove();
 
+        // Find the cart icon to insert before mobile menu
+        const mobileMenuToggle = navIcons.querySelector('.mobile-menu-toggle');
+        
         if (isAuthenticated && user) {
             // Add user profile icon
             const userIcon = document.createElement('a');
             userIcon.href = 'profile.html';
             userIcon.className = 'user-icon';
             userIcon.title = `${user.firstName} ${user.lastName}`;
-            userIcon.innerHTML = '👤';
-            navIcons.appendChild(userIcon);
+            userIcon.innerHTML = '<i class="fas fa-user"></i>';
+            userIcon.style.cssText = 'margin-left: 15px; color: #8b6914; font-size: 20px; text-decoration: none;';
+            
+            if (mobileMenuToggle) {
+                navIcons.insertBefore(userIcon, mobileMenuToggle);
+            } else {
+                navIcons.appendChild(userIcon);
+            }
         } else {
             // Add login link
             const loginLink = document.createElement('a');
             loginLink.href = 'login.html';
             loginLink.className = 'login-link';
             loginLink.textContent = 'Login';
-            loginLink.style.marginLeft = '15px';
-            navIcons.appendChild(loginLink);
+            loginLink.style.cssText = 'margin-left: 15px; color: #8b6914; font-weight: 600; text-decoration: none; padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease;';
+            
+            // Add hover effect
+            loginLink.addEventListener('mouseenter', function() {
+                this.style.background = '#f8f9ff';
+                this.style.color = '#764ba2';
+            });
+            loginLink.addEventListener('mouseleave', function() {
+                this.style.background = 'transparent';
+                this.style.color = '#8b6914';
+            });
+            
+            if (mobileMenuToggle) {
+                navIcons.insertBefore(loginLink, mobileMenuToggle);
+            } else {
+                navIcons.appendChild(loginLink);
+            }
         }
     }
 
