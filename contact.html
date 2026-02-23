@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Ambica Bangles - Get in touch with us for inquiries, custom orders, or visit our store.">
+    <title>Contact Us - Ambica Bangles</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <a href="tel:+919925465553"><i class="fas fa-phone"></i> +91 99254 65553</a>
+                        <a href="mailto:info@ambicabangles.com"><i class="fas fa-envelope"></i> info@ambicabangles.com</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ambicabangles" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ambicabangles" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/919925465553" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>AMBICA<span>BANGLES</span></h1>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-menu" id="navMenu">
+                        <ul class="nav-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="category.html?cat=heritage">Heritage Sets</a></li>
+                                    <li><a href="category.html?cat=ad">AD Sets</a></li>
+                                    <li><a href="category.html?cat=lct">LCT Sets</a></li>
+                                    <li><a href="category.html?cat=kundan">Kundan Sets</a></li>
+                                    <li><a href="category.html?cat=necklaces">Necklaces</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html" class="active">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                        <a href="cart.html" class="cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                        <button class="mobile-menu-btn" id="mobileMenuBtn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="search-bar" id="searchBar">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search for bangles, necklaces, sets...">
+                        <button class="search-submit"><i class="fas fa-search"></i></button>
+                        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Have a question or need assistance? Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="order">Order Related</option>
+                                    <option value="custom">Custom Order</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-container">
+                    <h2>Get in Touch</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Visit Our Store</h3>
+                            <p>Silicon Valley, 110, Shivranjani Cross Rd<br>Ahmedabad, Gujarat 380015</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+919925465553">+91 99254 65553</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:info@ambicabangles.com">info@ambicabangles.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Saturday: 10:00 AM - 8:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h3>Connect With Us</h3>
+                        <div class="social-buttons">
+                            <a href="https://www.instagram.com/ambicabangles" target="_blank" class="social-btn instagram">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.facebook.com/ambicabangles" target="_blank" class="social-btn facebook">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                            <a href="https://wa.me/919925465553" target="_blank" class="social-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us Here</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.7234567890123!2d72.5234567890123!3d23.0345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sSilicon%20Valley%2C%20Shivranjani%20Cross%20Rd%2C%20Satellite%2C%20Ahmedabad%2C%20Gujarat%20380015!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AMBICA<span>BANGLES</span></h3>
+                    <p>Creating Hand Stories for 11,000+ brides. Your trusted partner for bridal jewelry and accessories.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/ambicabangles" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ambicabangles" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/919925465553" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="category.html?cat=heritage">Heritage Sets</a></li>
+                        <li><a href="category.html?cat=ad">AD Sets</a></li>
+                        <li><a href="category.html?cat=lct">LCT Sets</a></li>
+                        <li><a href="category.html?cat=kundan">Kundan Sets</a></li>
+                        <li><a href="category.html?cat=necklaces">Necklaces</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Silicon Valley, 110, Shivranjani Cross Rd, Ahmedabad, Gujarat 380015</li>
+                        <li><i class="fas fa-phone"></i> +91 99254 65553</li>
+                        <li><i class="fas fa-envelope"></i> info@ambicabangles.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ambica Bangles. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

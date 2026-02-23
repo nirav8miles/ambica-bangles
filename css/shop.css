@@ -1,0 +1,240 @@
+/* Shop Page Specific Styles */
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: var(--light-color);
+}
+
+.shop-section {
+    padding: 60px 0;
+}
+
+.shop-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+}
+
+/* Sidebar Filters */
+.shop-sidebar {
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.filter-section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-option:hover {
+    color: var(--primary-color);
+}
+
+.filter-option input[type="radio"],
+.filter-option input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.price-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.price-range input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.price-range input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.price-range span {
+    color: var(--gray);
+}
+
+#clearFilters {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Shop Content */
+.shop-content {
+    flex: 1;
+}
+
+.shop-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+}
+
+.results-count {
+    font-size: 16px;
+    color: var(--gray);
+}
+
+.results-count span {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-options label {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.sort-options select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sort-options select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.no-results i {
+    font-size: 64px;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.no-results h3 {
+    font-size: 24px;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.no-results p {
+    color: var(--gray);
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .shop-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-sidebar {
+        position: static;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .shop-toolbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .sort-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sort-options select {
+        width: 100%;
+    }
+
+    .shop-sidebar {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 40px 0;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .page-header p {
+        font-size: 16px;
+    }
+
+    .shop-section {
+        padding: 40px 0;
+    }
+}
+
+/* Made with Bob */

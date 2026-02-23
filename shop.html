@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop premium bangles and jewelry at Ambica Bangles. Browse our collection of Heritage Sets, AD Sets, LCT Sets, Kundan Sets, and Necklaces.">
+    <title>Shop - Ambica Bangles | Premium Bridal Jewelry</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                        <a href="mailto:info@ambicabangles.com"><i class="fas fa-envelope"></i> info@ambicabangles.com</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ambicabangles" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ambicabangles" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>AMBICA<span>BANGLES</span></h1>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-menu" id="navMenu">
+                        <ul class="nav-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="dropdown">
+                                <a href="shop.html" class="active">Shop <i class="fas fa-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="category.html?cat=heritage">Heritage Sets</a></li>
+                                    <li><a href="category.html?cat=ad">AD Sets</a></li>
+                                    <li><a href="category.html?cat=lct">LCT Sets</a></li>
+                                    <li><a href="category.html?cat=kundan">Kundan Sets</a></li>
+                                    <li><a href="category.html?cat=necklaces">Necklaces</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                        <a href="cart.html" class="cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                        <button class="mobile-menu-btn" id="mobileMenuBtn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="search-bar" id="searchBar">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search for bangles, necklaces, sets...">
+                        <button class="search-submit"><i class="fas fa-search"></i></button>
+                        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Our Collection</h1>
+            <p>Discover exquisite bangles and jewelry for every occasion</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Sidebar Filters -->
+                <aside class="shop-sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="all" checked>
+                                <span>All Products</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="heritage">
+                                <span>Heritage Sets</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="ad">
+                                <span>AD Sets</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="lct">
+                                <span>LCT Sets</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="kundan">
+                                <span>Kundan Sets</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="necklaces">
+                                <span>Necklaces</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="number" id="minPrice" placeholder="Min" min="0">
+                            <span>-</span>
+                            <input type="number" id="maxPrice" placeholder="Max" min="0">
+                        </div>
+                        <button class="btn btn-outline" id="applyPriceFilter">Apply</button>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Availability</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" id="inStockOnly">
+                                <span>In Stock Only</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary" id="clearFilters">Clear All Filters</button>
+                </aside>
+
+                <!-- Products Area -->
+                <div class="shop-content">
+                    <div class="shop-toolbar">
+                        <div class="results-count">
+                            Showing <span id="resultsCount">0</span> products
+                        </div>
+                        <div class="sort-options">
+                            <label for="sortBy">Sort by:</label>
+                            <select id="sortBy">
+                                <option value="default">Default</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name-asc">Name: A to Z</option>
+                                <option value="name-desc">Name: Z to A</option>
+                                <option value="newest">Newest First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="shopProducts">
+                        <!-- Products will be loaded here -->
+                    </div>
+
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AMBICA<span>BANGLES</span></h3>
+                    <p>Creating Hand Stories for 11,000+ brides. Your trusted partner for bridal jewelry and accessories.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/ambicabangles" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ambicabangles" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="category.html?cat=heritage">Heritage Sets</a></li>
+                        <li><a href="category.html?cat=ad">AD Sets</a></li>
+                        <li><a href="category.html?cat=lct">LCT Sets</a></li>
+                        <li><a href="category.html?cat=kundan">Kundan Sets</a></li>
+                        <li><a href="category.html?cat=necklaces">Necklaces</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> [Your Shop Address]</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@ambicabangles.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 8PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ambica Bangles. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+[
+  {
+    "id": 1,
+    "name": "Royal Heritage Bangle Set",
+    "category": "heritage",
+    "price": 12999,
+    "originalPrice": 15999,
+    "image": "assets/images/product1.png",
+    "images": [
+      "assets/images/product1.png",
+      "assets/images/product2.png",
+      "assets/images/product3.png"
+    ],
+    "description": "Exquisite heritage bangle set crafted with traditional designs. Perfect for bridal occasions and special ceremonies.",
+    "features": [
+      "24K Gold Plated",
+      "Handcrafted Design",
+      "Set of 12 Bangles",
+      "Traditional Patterns"
+    ],
+    "inStock": true,
+    "badge": "sale"
+  },
+  {
+    "id": 2,
+    "name": "Diamond AD Bangle Set",
+    "category": "ad",
+    "price": 8999,
+    "originalPrice": null,
+    "image": "assets/images/product2.png",
+    "images": [
+      "assets/images/product2.png",
+      "assets/images/product4.png"
+    ],
+    "description": "Stunning AD stone bangle set with diamond-like brilliance. Ideal for weddings and festive occasions.",
+    "features": [
+      "American Diamond Stones",
+      "Premium Quality",
+      "Set of 8 Bangles",
+      "Adjustable Size"
+    ],
+    "inStock": true,
+    "badge": "new"
+  },
+  {
+    "id": 3,
+    "name": "LCT Stone Bangle Collection",
+    "category": "lct",
+    "price": 10499,
+    "originalPrice": 12999,
+    "image": "assets/images/product3.png",
+    "images": [
+      "assets/images/product3.png",
+      "assets/images/product1.png",
+      "assets/images/product4.png"
+    ],
+    "description": "Beautiful LCT stone bangles with intricate detailing. Perfect blend of tradition and elegance.",
+    "features": [
+      "LCT Stone Work",
+      "Gold Plated Base",
+      "Set of 10 Bangles",
+      "Lightweight Design"
+    ],
+    "inStock": true,
+    "badge": "sale"
+  },
+  {
+    "id": 4,
+    "name": "Kundan Bridal Bangle Set",
+    "category": "kundan",
+    "price": 15999,
+    "originalPrice": null,
+    "image": "assets/images/product4.png",
+    "images": [
+      "assets/images/product4.png",
+      "assets/images/product2.png"
+    ],
+    "description": "Premium Kundan bangle set for the modern bride. Exquisite craftsmanship with authentic Kundan work.",
+    "features": [
+      "Authentic Kundan Work",
+      "22K Gold Plated",
+      "Set of 12 Bangles",
+      "Bridal Collection"
+    ],
+    "inStock": true,
+    "badge": "new"
+  },
+  {
+    "id": 5,
+    "name": "Pearl Necklace Set",
+    "category": "necklaces",
+    "price": 6999,
+    "originalPrice": 8999,
+    "image": "assets/images/product1.png",
+    "images": [
+      "assets/images/product1.png",
+      "assets/images/product3.png"
+    ],
+    "description": "Elegant pearl necklace set with matching earrings. Perfect for traditional and contemporary outfits.",
+    "features": [
+      "Natural Pearls",
+      "Gold Plated Chain",
+      "Includes Earrings",
+      "Adjustable Length"
+    ],
+    "inStock": true,
+    "badge": "sale"
+  },
+  {
+    "id": 6,
+    "name": "Traditional Heritage Set",
+    "category": "heritage",
+    "price": 14999,
+    "originalPrice": null,
+    "image": "assets/images/product2.png",
+    "images": [
+      "assets/images/product2.png",
+      "assets/images/product1.png"
+    ],
+    "description": "Classic heritage bangle set with antique finish. Timeless design for special occasions.",
+    "features": [
+      "Antique Gold Finish",
+      "Temple Jewelry Design",
+      "Set of 14 Bangles",
+      "Premium Quality"
+    ],
+    "inStock": true,
+    "badge": null
+  },
+  {
+    "id": 7,
+    "name": "Designer AD Bangles",
+    "category": "ad",
+    "price": 7499,
+    "originalPrice": 9499,
+    "image": "assets/images/product3.png",
+    "images": [
+      "assets/images/product3.png",
+      "assets/images/product4.png"
+    ],
+    "description": "Contemporary AD bangle design with modern aesthetics. Perfect for parties and celebrations.",
+    "features": [
+      "Designer Collection",
+      "AD Stone Setting",
+      "Set of 6 Bangles",
+      "Modern Design"
+    ],
+    "inStock": true,
+    "badge": "sale"
+  },
+  {
+    "id": 8,
+    "name": "Luxury LCT Bangle Set",
+    "category": "lct",
+    "price": 11999,
+    "originalPrice": null,
+    "image": "assets/images/product4.png",
+    "images": [
+      "assets/images/product4.png",
+      "assets/images/product1.png"
+    ],
+    "description": "Luxurious LCT stone bangles with premium finish. Ideal for grand celebrations.",
+    "features": [
+      "Premium LCT Stones",
+      "Heavy Gold Plating",
+      "Set of 12 Bangles",
+      "Luxury Collection"
+    ],
+    "inStock": true,
+    "badge": "new"
+  },
+  {
+    "id": 9,
+    "name": "Kundan Polki Bangles",
+    "category": "kundan",
+    "price": 13499,
+    "originalPrice": 15999,
+    "image": "assets/images/product1.png",
+    "images": [
+      "assets/images/product1.png",
+      "assets/images/product2.png"
+    ],
+    "description": "Stunning Kundan Polki bangle set with intricate work. Perfect for wedding ceremonies.",
+    "features": [
+      "Kundan Polki Work",
+      "Handcrafted Design",
+      "Set of 10 Bangles",
+      "Wedding Special"
+    ],
+    "inStock": true,
+    "badge": "sale"
+  },
+  {
+    "id": 10,
+    "name": "Temple Jewelry Necklace",
+    "category": "necklaces",
+    "price": 9999,
+    "originalPrice": null,
+    "image": "assets/images/product2.png",
+    "images": [
+      "assets/images/product2.png",
+      "assets/images/product3.png"
+    ],
+    "description": "Traditional temple jewelry necklace set. Authentic South Indian design with modern touch.",
+    "features": [
+      "Temple Jewelry Design",
+      "Gold Plated",
+      "Complete Set",
+      "Traditional Craftsmanship"
+    ],
+    "inStock": true,
+    "badge": "new"
+  },
+  {
+    "id": 11,
+    "name": "Bridal Heritage Collection",
+    "category": "heritage",
+    "price": 18999,
+    "originalPrice": 22999,
+    "image": "assets/images/product3.png",
+    "images": [
+      "assets/images/product3.png",
+      "assets/images/product4.png"
+    ],
+    "description": "Premium bridal heritage bangle collection. Complete set for the perfect bridal look.",
+    "features": [
+      "Bridal Special",
+      "24K Gold Plated",
+      "Set of 16 Bangles",
+      "Premium Packaging"
+    ],
+    "inStock": true,
+    "badge": "sale"
+  },
+  {
+    "id": 12,
+    "name": "Elegant AD Stone Set",
+    "category": "ad",
+    "price": 9499,
+    "originalPrice": null,
+    "image": "assets/images/product4.png",
+    "images": [
+      "assets/images/product4.png",
+      "assets/images/product1.png"
+    ],
+    "description": "Elegant AD stone bangle set with sophisticated design. Perfect for formal occasions.",
+    "features": [
+      "Premium AD Stones",
+      "Elegant Design",
+      "Set of 8 Bangles",
+      "Party Wear"
+    ],
+    "inStock": true,
+    "badge": null
+  }
+]
