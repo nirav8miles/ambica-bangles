@@ -132,6 +132,18 @@ function viewProduct(productId) {
     window.location.href = `product.html?id=${productId}`;
 }
 
+// Add to Cart Function (Global)
+async function addToCart(productId) {
+    const productManager = new ProductManager();
+    await productManager.loadProducts();
+    const product = productManager.getProductById(productId);
+    
+    if (product) {
+        const cart = new ShoppingCart();
+        cart.addItem(product, 1);
+    }
+}
+
 // Format Currency
 function formatCurrency(amount) {
     return `₹${amount.toLocaleString('en-IN')}`;

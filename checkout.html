@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Ambica Bangles</title>
+    <meta name="description" content="Complete your purchase at Ambica Bangles. Secure checkout with multiple payment options.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .checkout-section {
+            padding: 60px 0;
+            background: var(--cream);
+        }
+        
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .checkout-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+        }
+        
+        .form-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--black);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-light);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: var(--transition-base);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+        
+        .form-group.error input,
+        .form-group.error select {
+            border-color: var(--danger);
+        }
+        
+        .error-message {
+            color: var(--danger);
+            font-size: 0.875rem;
+            margin-top: 5px;
+        }
+        
+        .payment-methods {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid var(--gray-light);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+        
+        .payment-option:hover {
+            border-color: var(--primary-gold);
+        }
+        
+        .payment-option input[type="radio"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .payment-option.selected {
+            border-color: var(--primary-gold);
+            background: var(--cream);
+        }
+        
+        .order-summary {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .order-summary h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+        
+        .summary-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        
+        .summary-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+        }
+        
+        .summary-item-details {
+            flex: 1;
+        }
+        
+        .summary-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .summary-item-quantity {
+            font-size: 0.875rem;
+            color: var(--gray-medium);
+        }
+        
+        .summary-item-price {
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+        
+        .summary-totals {
+            padding: 20px 0;
+            border-top: 2px solid var(--gray-light);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .summary-row.total {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--black);
+            padding-top: 15px;
+            border-top: 2px solid var(--primary-gold);
+        }
+        
+        .place-order-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+        
+        .place-order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .place-order-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .secure-checkout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: var(--gray-medium);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-summary {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <a href="tel:+919925465553"><i class="fas fa-phone"></i> +91 99254 65553</a>
+                        <a href="mailto:info@ambicabangles.com"><i class="fas fa-envelope"></i> info@ambicabangles.com</a>
+                    </div>
+                    <div class="header-social">
+                        <a href="https://www.instagram.com/ambicabangles" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ambicabangles" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/919925465553" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">AMBICA</span>
+                        <span class="logo-subtext">Bangles</span>
+                    </a>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Collections</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <a href="cart.html" class="cart-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Checkout</h1>
+            
+            <div class="checkout-container">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-user"></i> Contact Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-map-marker-alt"></i> Shipping Address</h2>
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" name="address" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <input type="text" id="state" name="state" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pincode">PIN Code *</label>
+                                    <input type="text" id="pincode" name="pincode" required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country *</label>
+                                    <select id="country" name="country" required>
+                                        <option value="India">India</option>
+                                    </select>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cod" checked>
+                                    <div>
+                                        <strong>Cash on Delivery</strong>
+                                        <p style="margin: 5px 0 0; font-size: 0.875rem; color: var(--gray-medium);">Pay when you receive your order</p>
+                                    </div>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="online">
+                                    <div>
+                                        <strong>Online Payment</strong>
+                                        <p style="margin: 5px 0 0; font-size: 0.875rem; color: var(--gray-medium);">UPI, Cards, Net Banking</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-sticky-note"></i> Order Notes (Optional)</h2>
+                            <div class="form-group">
+                                <label for="notes">Special instructions for your order</label>
+                                <textarea id="notes" name="notes" rows="4" placeholder="Any special requests or delivery instructions..."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-items" id="summaryItems">
+                        <!-- Cart items will be loaded here -->
+                    </div>
+                    
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="summarySubtotal">₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (18% GST):</span>
+                            <span id="summaryTax">₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="summaryShipping">₹0</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="summaryTotal">₹0</span>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="place-order-btn" id="placeOrderBtn">
+                        <i class="fas fa-lock"></i> Place Order
+                    </button>
+                    
+                    <div class="secure-checkout">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ambica Bangles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Initialize cart
+        const cart = new ShoppingCart();
+        
+        // Load order summary
+        function loadOrderSummary() {
+            const items = cart.getItems();
+            const summaryContainer = document.getElementById('summaryItems');
+            
+            if (items.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+            
+            summaryContainer.innerHTML = items.map(item => `
+                <div class="summary-item">
+                    <img src="${item.image}" alt="${item.name}" class="summary-item-image">
+                    <div class="summary-item-details">
+                        <div class="summary-item-name">${item.name}</div>
+                        <div class="summary-item-quantity">Qty: ${item.quantity}</div>
+                    </div>
+                    <div class="summary-item-price">₹${(item.price * item.quantity).toLocaleString('en-IN')}</div>
+                </div>
+            `).join('');
+            
+            // Update totals
+            const subtotal = cart.getSubtotal();
+            const tax = cart.getTax(subtotal);
+            const shipping = cart.getShipping();
+            const total = cart.getTotal();
+            
+            document.getElementById('summarySubtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+            document.getElementById('summaryTax').textContent = `₹${tax.toLocaleString('en-IN')}`;
+            document.getElementById('summaryShipping').textContent = shipping === 0 ? 'FREE' : `₹${shipping.toLocaleString('en-IN')}`;
+            document.getElementById('summaryTotal').textContent = `₹${total.toLocaleString('en-IN')}`;
+        }
+        
+        // Form validation
+        function validateForm() {
+            const form = document.getElementById('checkoutForm');
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                const formGroup = input.closest('.form-group');
+                const errorMessage = formGroup.querySelector('.error-message');
+                
+                if (!input.value.trim()) {
+                    formGroup.classList.add('error');
+                    errorMessage.textContent = 'This field is required';
+                    isValid = false;
+                } else {
+                    formGroup.classList.remove('error');
+                    errorMessage.textContent = '';
+                    
+                    // Email validation
+                    if (input.type === 'email') {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(input.value)) {
+                            formGroup.classList.add('error');
+                            errorMessage.textContent = 'Please enter a valid email';
+                            isValid = false;
+                        }
+                    }
+                    
+                    // Phone validation
+                    if (input.id === 'phone') {
+                        const phoneRegex = /^[0-9]{10}$/;
+                        if (!phoneRegex.test(input.value.replace(/\D/g, ''))) {
+                            formGroup.classList.add('error');
+                            errorMessage.textContent = 'Please enter a valid 10-digit phone number';
+                            isValid = false;
+                        }
+                    }
+                    
+                    // PIN code validation
+                    if (input.id === 'pincode') {
+                        const pincodeRegex = /^[0-9]{6}$/;
+                        if (!pincodeRegex.test(input.value)) {
+                            formGroup.classList.add('error');
+                            errorMessage.textContent = 'Please enter a valid 6-digit PIN code';
+                            isValid = false;
+                        }
+                    }
+                }
+            });
+            
+            return isValid;
+        }
+        
+        // Place order
+        document.getElementById('placeOrderBtn').addEventListener('click', function() {
+            if (!validateForm()) {
+                alert('Please fill in all required fields correctly');
+                return;
+            }
+            
+            const form = document.getElementById('checkoutForm');
+            const formData = new FormData(form);
+            const orderData = {
+                customer: {
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone')
+                },
+                shipping: {
+                    address: formData.get('address'),
+                    city: formData.get('city'),
+                    state: formData.get('state'),
+                    pincode: formData.get('pincode'),
+                    country: formData.get('country')
+                },
+                payment: formData.get('payment'),
+                notes: formData.get('notes'),
+                items: cart.getItems(),
+                totals: {
+                    subtotal: cart.getSubtotal(),
+                    tax: cart.getTax(cart.getSubtotal()),
+                    shipping: cart.getShipping(),
+                    total: cart.getTotal()
+                },
+                orderDate: new Date().toISOString()
+            };
+            
+            // Store order data
+            localStorage.setItem('lastOrder', JSON.stringify(orderData));
+            
+            // Clear cart
+            cart.clearCart();
+            
+            // Redirect to success page
+            alert('Order placed successfully! Thank you for shopping with Ambica Bangles.\n\nOrder Total: ₹' + orderData.totals.total.toLocaleString('en-IN'));
+            window.location.href = 'index.html';
+        });
+        
+        // Payment method selection
+        document.querySelectorAll('.payment-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+        
+        // Load summary on page load
+        loadOrderSummary();
+    </script>
+</body>
+</html>
