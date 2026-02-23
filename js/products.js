@@ -132,24 +132,40 @@ function viewProduct(productId) {
     window.location.href = `product.html?id=${productId}`;
 }
 
-// Add to Cart Function (Global) - Simplified and Fixed
+// Add to Cart Function (Global) - With Debug Logging
 function addToCart(productId) {
+    console.log('addToCart called with productId:', productId);
+    console.log('window.productManager exists:', !!window.productManager);
+    console.log('window.shoppingCart exists:', !!window.shoppingCart);
+    
     // Get product from the already loaded products
     const product = window.productManager ? window.productManager.getProductById(productId) : null;
     
+    console.log('Product found:', product);
+    
     if (!product) {
         console.error('Product not found:', productId);
-        alert('Error: Product not found. Please refresh the page.');
+        console.error('Available products:', window.productManager ? window.productManager.getAllProducts() : 'No product manager');
+        alert('Error: Product not found. Please refresh the page and try again.');
         return;
     }
     
     // Create or get existing cart instance
     if (!window.shoppingCart) {
+        console.log('Creating new ShoppingCart instance');
         window.shoppingCart = new ShoppingCart();
     }
     
+    console.log('Adding product to cart:', product.name);
+    
     // Add item to cart
-    window.shoppingCart.addItem(product, 1);
+    try {
+        window.shoppingCart.addItem(product, 1);
+        console.log('Product added successfully!');
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        alert('Error adding product to cart: ' + error.message);
+    }
 }
 
 // Format Currency
