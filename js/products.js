@@ -132,16 +132,24 @@ function viewProduct(productId) {
     window.location.href = `product.html?id=${productId}`;
 }
 
-// Add to Cart Function (Global)
-async function addToCart(productId) {
-    const productManager = new ProductManager();
-    await productManager.loadProducts();
-    const product = productManager.getProductById(productId);
+// Add to Cart Function (Global) - Simplified and Fixed
+function addToCart(productId) {
+    // Get product from the already loaded products
+    const product = window.productManager ? window.productManager.getProductById(productId) : null;
     
-    if (product) {
-        const cart = new ShoppingCart();
-        cart.addItem(product, 1);
+    if (!product) {
+        console.error('Product not found:', productId);
+        alert('Error: Product not found. Please refresh the page.');
+        return;
     }
+    
+    // Create or get existing cart instance
+    if (!window.shoppingCart) {
+        window.shoppingCart = new ShoppingCart();
+    }
+    
+    // Add item to cart
+    window.shoppingCart.addItem(product, 1);
 }
 
 // Format Currency

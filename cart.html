@@ -10,73 +10,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header class="header">
-        <div class="top-bar">
+        <div class="header-top">
             <div class="container">
-                <div class="top-bar-content">
-                    <div class="contact-info">
-                        <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <a href="tel:+919925465553"><i class="fas fa-phone"></i> +91 99254 65553</a>
                         <a href="mailto:info@ambicabangles.com"><i class="fas fa-envelope"></i> info@ambicabangles.com</a>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/ambicabangles" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/ambicabangles" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <div class="header-social">
+                        <a href="https://www.instagram.com/ambicabangles" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ambicabangles" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/919925465553" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         
-        <nav class="navbar">
+        <div class="header-main">
             <div class="container">
-                <div class="nav-wrapper">
-                    <div class="logo">
-                        <a href="index.html">
-                            <h1>AMBICA<span>BANGLES</span></h1>
-                        </a>
-                    </div>
+                <nav class="navbar">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">AMBICA</span>
+                        <span class="logo-subtext">Bangles</span>
+                    </a>
                     
-                    <div class="nav-menu" id="navMenu">
-                        <ul class="nav-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="dropdown">
-                                <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="category.html?cat=heritage">Heritage Sets</a></li>
-                                    <li><a href="category.html?cat=ad">AD Sets</a></li>
-                                    <li><a href="category.html?cat=lct">LCT Sets</a></li>
-                                    <li><a href="category.html?cat=kundan">Kundan Sets</a></li>
-                                    <li><a href="category.html?cat=necklaces">Necklaces</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="shop.html">Collections <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="category.html?cat=heritage">Heritage Sets</a></li>
+                                <li><a href="category.html?cat=ad">AD Sets</a></li>
+                                <li><a href="category.html?cat=lct">LCT Sets</a></li>
+                                <li><a href="category.html?cat=kundan">Kundan Sets</a></li>
+                                <li><a href="category.html?cat=necklaces">Necklaces</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                     
                     <div class="nav-actions">
-                        <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
-                        <a href="cart.html" class="cart-btn">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count" id="cartCount">0</span>
+                        <button class="search-toggle" aria-label="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <a href="cart.html" class="cart-icon active">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
                         </a>
-                        <button class="mobile-menu-btn" id="mobileMenuBtn">
-                            <i class="fas fa-bars"></i>
+                        <button class="mobile-menu-toggle" aria-label="Menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </button>
                     </div>
-                </div>
-                
-                <!-- Search Bar -->
-                <div class="search-bar" id="searchBar">
-                    <div class="search-input-wrapper">
-                        <input type="text" id="searchInput" placeholder="Search for bangles, necklaces, sets...">
-                        <button class="search-submit"><i class="fas fa-search"></i></button>
-                        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
-                    </div>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="container">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search for bangles, necklaces, jewelry...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="search-close"><i class="fas fa-times"></i></button>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Page Header -->

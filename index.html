@@ -541,9 +541,13 @@
 
         // Load Featured Products
         document.addEventListener('DOMContentLoaded', async () => {
-            const productManager = new ProductManager();
-            await productManager.loadProducts();
-            const products = productManager.getAllProducts().slice(0, 4);
+            // Create global product manager instance
+            window.productManager = new ProductManager();
+            await window.productManager.loadProducts();
+            const products = window.productManager.getAllProducts().slice(0, 4);
+            
+            // Initialize global shopping cart
+            window.shoppingCart = new ShoppingCart();
             
             const container = document.getElementById('featuredProducts');
             container.innerHTML = products.map(product => `

@@ -21,8 +21,17 @@ const categoryDescriptions = {
 
 // Initialize category page
 document.addEventListener('DOMContentLoaded', async function() {
-    productManager = new ProductManager();
-    await productManager.loadProducts();
+    // Use global product manager or create new one
+    if (!window.productManager) {
+        window.productManager = new ProductManager();
+        await window.productManager.loadProducts();
+    }
+    productManager = window.productManager;
+    
+    // Initialize global shopping cart
+    if (!window.shoppingCart) {
+        window.shoppingCart = new ShoppingCart();
+    }
     
     // Get category from URL
     const urlParams = new URLSearchParams(window.location.search);
